@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lương Tiểu Ngọc | Automation Engineer</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link rel="stylesheet" href="style.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -16,79 +17,118 @@
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
+
   <body>
     <div class="scroll-up-btn">
       <i class="fas fa-angle-up"></i>
     </div>
 
+    <!-- NAVBAR -->
     <nav class="navbar">
       <div class="container">
         <div class="logo">
           <span class="text-blue">TieuNgoc</span>Automation
         </div>
+
         <ul class="menu">
-          <li><a href="#home" class="menu-btn">Trang chủ</a></li>
-          <li><a href="#about" class="menu-btn">Giới thiệu</a></li>
-          <li><a href="#skills" class="menu-btn">Kỹ năng</a></li>
-          <li><a href="#experience" class="menu-btn">Kinh nghiệm</a></li>
-          <li><a href="#contact" class="menu-btn contact-btn">Liên hệ</a></li>
+          <li>
+            <a href="#home" class="menu-btn" data-i18n="menu.home">Trang chủ</a>
+          </li>
+          <li>
+            <a href="#about" class="menu-btn" data-i18n="menu.about"
+              >Giới thiệu</a
+            >
+          </li>
+          <li>
+            <a href="#skills" class="menu-btn" data-i18n="menu.skills"
+              >Kỹ năng</a
+            >
+          </li>
+          <li>
+            <a href="#experience" class="menu-btn" data-i18n="menu.experience"
+              >Kinh nghiệm</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="menu-btn contact-btn"
+              data-i18n="menu.contact"
+            >
+              Liên hệ
+            </a>
+          </li>
         </ul>
+
+        <!-- LANGUAGE SWITCH -->
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="vi">VI</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+
         <div class="menu-btn-icon">
           <i class="fas fa-bars"></i>
         </div>
       </div>
     </nav>
 
+    <!-- HOME -->
     <section class="home" id="home">
       <div class="container">
         <div class="home-content">
-          <div class="text-1">Xin chào, tôi tên là</div>
+          <div class="text-1" data-i18n="home.hello">Xin chào, tôi tên là</div>
           <div class="text-2">Lương Tiểu Ngọc</div>
-          <div class="text-3">Và tôi là <span class="typing"></span></div>
-          <p>
+          <div class="text-3">
+            <span data-i18n="home.and">Và tôi là</span>
+            <span class="typing"></span>
+          </div>
+
+          <p data-i18n="home.desc">
             Sinh viên ngành Kỹ thuật Điều khiển & Tự động hóa. Đam mê thiết kế
             hệ thống, lập trình PLC và giải pháp công nghiệp thông minh.
           </p>
+
           <div class="home-buttons">
-            <a href="#contact" class="btn-glow">Tuyển dụng tôi ngay</a>
-            <a href="assets/CV_Lương Tiểu Ngọc.pdf" class="btn-outline"
-              >Tải CV <i class="fas fa-download"></i
-            ></a>
+            <a href="#contact" class="btn-glow" data-i18n="home.hire">
+              Tuyển dụng tôi ngay
+            </a>
+            <a href="assets/CV_Lương Tiểu Ngọc.pdf" class="btn-outline">
+              <span data-i18n="home.cv">Tải CV</span>
+              <i class="fas fa-download"></i>
+            </a>
           </div>
+
           <div class="social-icons">
             <a href="https://www.linkedin.com/in/luongtieungoc" target="_blank">
               <i class="fab fa-linkedin-in"></i>
             </a>
-
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=luongtieungoc12@gmail.com&su=Liên hệ công việc từ Portfolio"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=luongtieungoc12@gmail.com"
               target="_blank"
             >
               <i class="fas fa-envelope"></i>
             </a>
-
             <a
               href="https://github.com/Luongtieungoc-automation79"
               target="_blank"
             >
               <i class="fab fa-github"></i>
             </a>
-
             <a
               href="https://www.facebook.com/profile.php?id=100042882301947"
               target="_blank"
             >
               <i class="fab fa-facebook-f"></i>
             </a>
-
             <a
-              href="https://www.tiktok.com/@tieungocautomation?is_from_webapp=1&sender_device=pc"
+              href="https://www.tiktok.com/@tieungocautomation"
               target="_blank"
             >
               <i class="fab fa-tiktok"></i>
             </a>
           </div>
         </div>
+
         <div class="home-img" data-aos="fade-left">
           <div class="glowing-circle"></div>
           <img src="assets/avatar.jpg" alt="Lương Tiểu Ngọc" />
@@ -96,42 +136,57 @@
       </div>
     </section>
 
+    <!-- ABOUT -->
     <section class="about" id="about">
       <div class="container">
-        <h2 class="title" data-aos="fade-up">Về bản thân</h2>
+        <h2 class="title" data-i18n="about.title" data-aos="fade-up">
+          Về bản thân
+          <span class="title-bg" data-i18n-bg="about.bg">About</span>
+        </h2>
+
         <div class="about-content">
           <div class="column left" data-aos="fade-right">
             <img src="assets/logo.jpg" alt="Logo" />
           </div>
+
           <div class="column right" data-aos="fade-left">
             <div class="text">
-              Tôi là Lương Tiểu Ngọc
+              <span data-i18n="about.im">Tôi là</span> Lương Tiểu Ngọc
               <span class="break-line">Automation Engineer</span>
             </div>
-            <p>
+
+            <p data-i18n="about.desc">
               Hiện là sinh viên năm 4 tại Đại học Nông Lâm TPHCM. Tôi có kinh
-              nghiệm thực chiến trong việc đấu nối tủ điện, thiết kế trên phần mềm Autocad, thiết kế mạch PCB và
-              làm việc với các hệ thống điều khiển tự động. <br /><br />
-              Tôi luôn khao khát cơ hội vận dụng kiến thức chuyên môn vào các dự án thực tiễn, đặc biệt là trong lĩnh vực Tự động hóa và IoT.
-              Tôi mong muốn làm việc tại khu vực Thành Phố Hồ Chí Minh, các vùng phụ cận hoặc tại Khánh Hòa.
+              nghiệm thực chiến trong việc đấu nối tủ điện, thiết kế trên phần
+              mềm Autocad, thiết kế mạch PCB và làm việc với các hệ thống điều
+              khiển tự động. <br /><br />
+              Tôi luôn khao khát cơ hội vận dụng kiến thức chuyên môn vào các dự
+              án thực tiễn, đặc biệt là trong lĩnh vực Tự động hóa và IoT. Tôi
+              mong muốn làm việc tại khu vực Thành Phố Hồ Chí Minh, các vùng phụ
+              cận hoặc tại Khánh Hòa.
             </p>
+
             <div class="info-list">
               <div class="info-item">
                 <span class="label">GPA:</span>
                 <span class="value">3.15/4.0 (7.7/10)</span>
               </div>
               <div class="info-item">
-                <span class="label">Trường:</span>
+                <span class="label" data-i18n="about.school">Trường:</span>
                 <span class="value">
                   Đại học Nông Lâm TP.HCM <br />
-                  <span style="font-size: 0.9em; font-weight: 400"
-                    >(Nong Lam University - NLU)</span
-                  >
+                  <span style="font-size: 0.9em; font-weight: 400">
+                    (Nong Lam University - NLU)
+                  </span>
                 </span>
               </div>
               <div class="info-item">
-                <span class="label">Nơi ở:</span>
-                <span class="value">Khánh Hòa, Việt Nam</span>
+                <span class="label" data-i18n="about.locationLabel"
+                  >Nơi ở:</span
+                >
+                <span class="value" data-i18n="about.location">
+                  Khánh Hòa, Việt Nam
+                </span>
               </div>
             </div>
           </div>
@@ -139,46 +194,57 @@
       </div>
     </section>
 
+    <!-- SKILLS -->
     <section class="skills" id="skills">
       <div class="container">
-        <h2 class="title" data-aos="fade-down">Kỹ năng chuyên môn</h2>
+        <h2 class="title" data-i18n="skills.title" data-aos="fade-down">
+          Kỹ năng chuyên môn
+          <span class="title-bg" data-i18n-bg="skills.bg">Skills</span>
+        </h2>
+
         <div class="skills-content">
-          <div class="card" data-aos="flip-left" data-aos-delay="100">
+          <div class="card" data-aos="flip-left">
             <div class="box">
               <i class="fas fa-laptop-code"></i>
-              <div class="text">Lập trình Điều khiển</div>
-              <p>
-                PLC, Arduino, PIC16, Raspberry Pi. Tư duy logic và thuật toán
-                điều khiển.
+              <div class="text" data-i18n="skills.control">
+                Lập trình Điều khiển
+              </div>
+              <p data-i18n="skills.controlDesc">
+                PLC, Arduino, PIC16, Raspberry Pi...
               </p>
             </div>
           </div>
-          <div class="card" data-aos="flip-left" data-aos-delay="200">
+
+          <div class="card" data-aos="flip-left">
             <div class="box">
               <i class="fas fa-pencil-ruler"></i>
-              <div class="text">Thiết kế Kỹ thuật</div>
-              <p>
-                AutoCAD, Thiết kế mạch in (PCB), Đọc hiểu bản vẽ kỹ thuật bố trí
-                tàu.
+              <div class="text" data-i18n="skills.design">
+                Thiết kế Kỹ thuật
+              </div>
+              <p data-i18n="skills.designDesc">
+                AutoCAD, PCB, đọc bản vẽ kỹ thuật.
               </p>
             </div>
           </div>
-          <div class="card" data-aos="flip-left" data-aos-delay="300">
+
+          <div class="card" data-aos="flip-left">
             <div class="box">
               <i class="fas fa-cogs"></i>
-              <div class="text">Thi công & Lắp đặt</div>
-              <p>
-                Đấu nối tủ điện công nghiệp, lắp ráp máy tự động, xử lý sự cố.
+              <div class="text" data-i18n="skills.install">
+                Thi công & Lắp đặt
+              </div>
+              <p data-i18n="skills.installDesc">
+                Đấu nối tủ điện, máy tự động.
               </p>
             </div>
           </div>
-          <div class="card" data-aos="flip-left" data-aos-delay="400">
+
+          <div class="card" data-aos="flip-left">
             <div class="box">
               <i class="fas fa-users"></i>
-              <div class="text">Kỹ năng mềm</div>
-              <p>
-                Làm việc nhóm, Giải quyết vấn đề, Đọc tài liệu Tiếng Anh chuyên
-                ngành.
+              <div class="text" data-i18n="skills.soft">Kỹ năng mềm</div>
+              <p data-i18n="skills.softDesc">
+                Làm việc nhóm, đọc tài liệu tiếng Anh.
               </p>
             </div>
           </div>
@@ -186,45 +252,67 @@
       </div>
     </section>
 
+    <!-- EXPERIENCE -->
     <section class="experience" id="experience">
       <div class="container">
-        <h2 class="title" data-aos="fade-up">Hành trình kinh nghiệm</h2>
+        <h2 class="title" data-i18n="exp.title" data-aos="fade-up">
+          Hành trình kinh nghiệm
+          <span class="title-bg" data-i18n-bg="exp.bg">Experience</span>
+        </h2>
+
         <div class="timeline">
+          <!-- ITEM 1 -->
           <div class="timeline-item" data-aos="fade-right">
             <div class="timeline-dot"></div>
             <div class="timeline-date">07/2025 - 08/2025</div>
             <div class="timeline-content">
-              <h3>HD Hyundai Việt Nam (HVS)</h3>
-              <p>Thực tập sinh Thiết kế Tàu</p>
+              <h3 data-i18n="exp.hd.title">HD Hyundai Việt Nam (HVS)</h3>
+              <p data-i18n="exp.hd.role">Thực tập sinh Thiết kế Tàu</p>
               <ul>
-                <li>Thiết kế bản vẽ sản xuất, hỗ trợ bộ phận vỏ tàu.</li>
-                <li>Học tập quy chuẩn và phần mềm chuyên dụng của công ty.</li>
+                <li data-i18n="exp.hd.li1">
+                  Thiết kế bản vẽ sản xuất, hỗ trợ bộ phận vỏ tàu.
+                </li>
+                <li data-i18n="exp.hd.li2">
+                  Học tập quy chuẩn và phần mềm chuyên dụng của công ty.
+                </li>
               </ul>
             </div>
           </div>
+
+          <!-- ITEM 2 -->
           <div class="timeline-item" data-aos="fade-left">
             <div class="timeline-dot"></div>
             <div class="timeline-date">06/2024 - 09/2024</div>
             <div class="timeline-content">
-              <h3>PAS Việt Nam Automation</h3>
-              <p>Thực tập sinh Kỹ thuật</p>
+              <h3 data-i18n="exp.pas.title">PAS Việt Nam Automation</h3>
+              <p data-i18n="exp.pas.role">Thực tập sinh Kỹ thuật</p>
               <ul>
-                <li>
+                <li data-i18n="exp.pas.li1">
                   Đấu nối tủ điện, tháo lắp máy tự động (làm nệm, đếm phôi).
                 </li>
-                <li>Nghiên cứu ứng dụng Raspberry Pi.</li>
+                <li data-i18n="exp.pas.li2">
+                  Nghiên cứu ứng dụng Raspberry Pi.
+                </li>
               </ul>
             </div>
           </div>
+
+          <!-- ITEM 3 -->
           <div class="timeline-item" data-aos="fade-right">
             <div class="timeline-dot"></div>
             <div class="timeline-date">2022 - Nay</div>
             <div class="timeline-content">
-              <h3>Đại học Nông Lâm TPHCM</h3>
-              <p>Sinh viên Kỹ thuật Điều khiển & Tự động hóa</p>
+              <h3 data-i18n="exp.uni.title">Đại học Nông Lâm TPHCM</h3>
+              <p data-i18n="exp.uni.role">
+                Sinh viên Kỹ thuật Điều khiển & Tự động hóa
+              </p>
               <ul>
-                <li>Đạt Học bổng học tập (Loại Giỏi) HK2 2022-2023.</li>
-                <li>Tham gia các dự án nghiên cứu khoa học cấp khoa.</li>
+                <li data-i18n="exp.uni.li1">
+                  Đạt Học bổng học tập (Loại Giỏi) HK2 2022-2023.
+                </li>
+                <li data-i18n="exp.uni.li2">
+                  Tham gia các dự án nghiên cứu khoa học cấp khoa.
+                </li>
               </ul>
             </div>
           </div>
@@ -232,31 +320,44 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section class="contact" id="contact">
       <div class="container">
-        <h2 class="title" data-aos="fade-up">Liên hệ</h2>
+        <h2 class="title" data-i18n="contact.title" data-aos="fade-up">
+          Liên hệ
+          <span class="title-bg" data-i18n-bg="contact.bg">Contact</span>
+        </h2>
+
         <div class="contact-content">
           <div class="column left" data-aos="zoom-in">
-            <div class="text">Kết nối với tôi</div>
-            <p>
+            <div class="text" data-i18n="contact.connect">Kết nối với tôi</div>
+
+            <p data-i18n="contact.desc">
               Nếu bạn đang tìm kiếm một kỹ sư trẻ đầy nhiệt huyết cho các dự án
               tự động hóa, đừng ngần ngại liên hệ.
             </p>
+
             <div class="icons">
               <div class="row">
                 <i class="fas fa-user"></i>
                 <div class="info">
-                  <div class="head">Tên</div>
+                  <div class="head" data-i18n="contact.nameLabel">Tên</div>
                   <div class="sub-title">Lương Tiểu Ngọc</div>
                 </div>
               </div>
+
               <div class="row">
                 <i class="fas fa-map-marker-alt"></i>
                 <div class="info">
-                  <div class="head">Địa chỉ</div>
-                  <div class="sub-title">Ninh Hòa, Khánh Hòa</div>
+                  <div class="head" data-i18n="contact.addressLabel">
+                    Địa chỉ
+                  </div>
+                  <div class="sub-title" data-i18n="contact.address">
+                    Ninh Hòa, Khánh Hòa
+                  </div>
                 </div>
               </div>
+
               <div class="row">
                 <i class="fas fa-envelope"></i>
                 <div class="info">
@@ -264,19 +365,23 @@
                   <div class="sub-title">luongtieungoc12@gmail.com</div>
                 </div>
               </div>
+
               <div class="row">
                 <i class="fas fa-phone-alt"></i>
                 <div class="info">
-                  <div class="head">Điện thoại</div>
+                  <div class="head" data-i18n="contact.phoneLabel">
+                    Điện thoại
+                  </div>
                   <div class="sub-title">0846 208 268</div>
                 </div>
               </div>
             </div>
           </div>
+
           <div class="column right" data-aos="zoom-in">
             <div class="qr-box">
               <img src="assets/qr-code.jpg" alt="Zalo QR Code" />
-              <p>Quét mã Zalo để trao đổi nhanh</p>
+              <p data-i18n="contact.qr">Quét mã Zalo để trao đổi nhanh</p>
             </div>
           </div>
         </div>
@@ -284,10 +389,9 @@
     </section>
 
     <footer>
-      <span
-        >Created by <a href="#">Lương Tiểu Ngọc</a> |
-        <span class="far fa-copyright"></span> 2025 All rights reserved.</span
-      >
+      <span data-i18n="footer.text">
+        Created by <a href="#">Lương Tiểu Ngọc</a> | 2025 All rights reserved.
+      </span>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -296,9 +400,3 @@
     <script src="script.js"></script>
   </body>
 </html>
-
-
-
-
-
-
