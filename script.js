@@ -35,7 +35,7 @@ $(document).ready(function(){
 
     // Hiệu ứng gõ chữ (Typing Animation)
     var typed = new Typed(".typing", {
-        strings: ["Sinh viên", "Automation Engineer", "Người đam mê kỹ thuật", "PLC Programmer"],
+        strings: ["Sinh viên", "Automation Engineer", "Người đam mê kỹ thuật"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
@@ -48,4 +48,5 @@ $(document).ready(function(){
         once: true, // Chỉ chạy 1 lần khi cuộn xuống
         mirror: false 
     });
+
 });
