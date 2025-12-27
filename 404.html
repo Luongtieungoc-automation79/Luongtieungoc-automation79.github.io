@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bảo trì / Maintenance - Lương Tiểu Ngọc</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="maintenance-container">
+      <div class="maintenance-content">
+        <div class="icon-warning">
+          <i class="fas fa-tools"></i>
+        </div>
+        
+        <h1 id="m-title">Website Đang Bảo Trì</h1>
+        <p id="m-desc">
+          Xin lỗi vì sự bất tiện này. Website đang được nâng cấp để phục vụ tốt hơn.
+          <br>Vui lòng liên hệ qua thông tin bên dưới.
+        </p>
+
+        <!-- Business Card Image -->
+        <div class="card-display">
+          <img src="assets/card-vn.png" alt="Business Card" id="biz-card" />
+        </div>
+
+        <!-- Language Switcher for Maintenance Page -->
+        <button id="m-lang-switch" class="btn-lang-m">
+          <img src="https://flagcdn.com/w40/gb.png" alt="EN" id="m-flag">
+          <span id="m-lang-text">Switch to English</span>
+        </button>
+
+        <div class="back-home">
+           <a href="index.html" class="btn-outline"> <i class="fas fa-home"></i> <span id="m-back">Quay lại Trang chủ</span></a>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        const data = {
+          vi: {
+            title: "Website Đang Bảo Trì",
+            desc: "Xin lỗi vì sự bất tiện này. Website đang được nâng cấp để phục vụ tốt hơn.<br>Vui lòng liên hệ qua thông tin bên dưới.",
+            btnText: "Switch to English",
+            cardSrc: "assets/card-vn.png",
+            flagSrc: "https://flagcdn.com/w40/gb.png",
+            back: "Quay lại Trang chủ"
+          },
+          en: {
+            title: "Website Under Maintenance",
+            desc: "We apologize for the inconvenience. The website is performing scheduled maintenance.<br>Please contact me via the information below.",
+            btnText: "Chuyển sang Tiếng Việt",
+            cardSrc: "assets/card-en.png",
+            flagSrc: "https://flagcdn.com/w40/vn.png",
+            back: "Back to Home"
+          }
+        };
+
+        let currentLang = "vi";
+
+        $("#m-lang-switch").click(function () {
+          currentLang = currentLang === "vi" ? "en" : "vi";
+          const content = data[currentLang];
+
+          $("#m-title").text(content.title);
+          $("#m-desc").html(content.desc);
+          $("#m-lang-text").text(content.btnText);
+          $("#biz-card").attr("src", content.cardSrc);
+          $("#m-flag").attr("src", content.flagSrc);
+          $("#m-back").text(content.back);
+        });
+      });
+    </script>
+  </body>
+</html>
