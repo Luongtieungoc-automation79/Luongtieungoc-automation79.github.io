@@ -10,7 +10,7 @@ $(document).ready(function () {
 
       home_hello: "Xin chào, tôi tên là",
       home_name: "Lương Tiểu Ngọc",
-      home_role_prefix: "Và tôi là",
+      home_role_prefix: "Và tôi là ",
       home_desc:
         "Sinh viên ngành Kỹ thuật Điều khiển & Tự động hóa. Đam mê thiết kế hệ thống, lập trình PLC và giải pháp công nghiệp thông minh.",
       home_hire_btn: "Tuyển dụng tôi ngay",
@@ -70,7 +70,7 @@ $(document).ready(function () {
 
       home_hello: "Hello, my name is",
       home_name: "Luong Tieu Ngoc",
-      home_role_prefix: "And I'm a",
+      home_role_prefix: "And I'm a ",
       home_desc:
         "Student of Control Engineering & Automation. Passionate about system design, PLC programming, and smart industrial solutions.",
       home_hire_btn: "Hire Me Now",
@@ -212,3 +212,4 @@ $(document).ready(function () {
     mirror: false,
   });
 });
+
