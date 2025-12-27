@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bảo trì / Maintenance - Lương Tiểu Ngọc</title>
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
-    <link rel="stylesheet" href="/style.css" />
+    
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet"
@@ -14,35 +16,232 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+
+    <style>
+      /* --- STANDALONE CSS FOR 404 PAGE (LIGHT MODE & FULLSCREEN) --- */
+      :root {
+        --primary-color: #007bff; /* Xanh dương tươi */
+        --bg-color: #f0f8ff; /* AliceBlue sáng sủa */
+        --text-color: #333333; /* Chữ đậm dễ đọc */
+        --text-grey: #666666;
+        --card-bg: #ffffff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        min-height: 100vh; /* Full màn hình */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .maintenance-container {
+        width: 100%;
+        max-width: 1200px; /* Mở rộng tối đa */
+        padding: 50px;
+        background: var(--card-bg);
+        border-radius: 30px;
+        box-shadow: 0 20px 60px rgba(0, 123, 255, 0.15);
+        animation: fadeIn 0.8s ease-out;
+        
+        /* Grid Layout cho Desktop: Chia 2 cột */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+        text-align: left; /* Canh trái cho desktop */
+      }
+
+      /* Wrapper cho nội dung bên trái */
+      .content-left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      /* Wrapper cho ảnh bên phải */
+      .card-display {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+      }
+
+      .icon-warning {
+        font-size: 80px;
+        color: var(--primary-color);
+        margin-bottom: 20px; /* Giảm khoảng cách chút */
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+      }
+
+      h1 {
+        color: var(--primary-color);
+        margin-bottom: 20px;
+        font-size: 42px; /* Chữ to rõ ràng */
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      p {
+        color: var(--text-grey);
+        margin-bottom: 40px;
+        font-size: 18px;
+        line-height: 1.6;
+        max-width: 700px;
+      }
+
+      .card-display img {
+        width: 100%;
+        max-width: 100%; /* Fill hết cột phải */
+        border-radius: 20px;
+        margin-bottom: 0; /* Bỏ margin dưới vì cột ngang */
+        box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        transition: transform 0.3s;
+      }
+      .card-display img:hover {
+        transform: scale(1.03);
+      }
+
+      /* Ẩn ảnh mobile trên desktop */
+      .card-mobile {
+        display: none;
+      }
+      
+      /* Hiện ảnh desktop */
+      .card-desktop {
+        display: flex;
+      }
+
+      /* Buttons */
+      .btn-lang-m, .btn-outline {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 15px 30px; /* Nút to hơn */
+        border-radius: 50px; /* Bo tròn mềm mại */
+        border: 2px solid var(--primary-color);
+        background: transparent;
+        color: var(--primary-color);
+        font-weight: 700;
+        font-size: 16px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.3s;
+        margin: 10px;
+      }
+
+      .btn-lang-m:hover, .btn-outline:hover {
+        background: var(--primary-color);
+        color: #fff; /* Đổi màu chữ sang trắng khi hover */
+        box-shadow: 0 5px 20px rgba(0, 123, 255, 0.3);
+        transform: translateY(-3px);
+      }
+      
+      .btn-lang-m img {
+        width: 24px;
+        height: auto;
+      }
+
+      /* Mobile Responsive */
+      @media (max-width: 900px) {
+        body {
+            /* Cho phép cuộn trên mobile nếu nội dung dài */
+            height: auto; 
+            overflow-y: auto; 
+        }
+        .maintenance-container {
+          grid-template-columns: 1fr; /* Về 1 cột */
+          text-align: center;
+          padding: 40px 20px;
+          gap: 30px;
+        }
+
+        .content-left {
+          align-items: center; /* Canh giữa trở lại */
+          order: 1; /* Chữ lên trên */
+        }
+        
+        /* Ẩn ảnh desktop trên mobile */
+        .card-desktop {
+           display: none !important;
+        }
+        
+        /* Hiện ảnh mobile */
+        .card-mobile {
+          display: flex !important;
+          margin: 30px 0; /* Khoảng cách trên dưới */
+        }
+
+        h1 { font-size: 32px; }
+        p { font-size: 16px; max-width: 100%; }
+        
+        .btn-lang-m, .btn-outline {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="maintenance-container">
-      <div class="maintenance-content">
-        <div class="icon-warning">
-          <i class="fas fa-tools"></i>
-        </div>
-        
-        <h1 id="m-title">Website Đang Bảo Trì</h1>
-        <p id="m-desc">
-          Xin lỗi vì sự bất tiện này. Website đang được nâng cấp để phục vụ tốt hơn.
-          <br>Vui lòng liên hệ qua thông tin bên dưới.
-        </p>
+      
+      <!-- Cột Trái: Nội dung Text & Nút -->
+      <div class="content-left">
+          <div class="icon-warning">
+            <i class="fas fa-tools"></i>
+          </div>
+          
+          <h1 id="m-title">Website Đang Bảo Trì</h1>
+          <p id="m-desc">
+            Xin lỗi vì sự bất tiện này. Website đang được nâng cấp để phục vụ tốt hơn.
+            <br>Vui lòng liên hệ qua thông tin bên cạnh.
+          </p>
 
-        <!-- Business Card Image -->
-        <div class="card-display">
-          <img src="/assets/card-vn.png" alt="Business Card" id="biz-card" />
-        </div>
+          <!-- Ảnh sẽ hiện ở đây trên mobile (order: 2) -->
+          <div class="card-display card-mobile">
+            <img src="/assets/card-vn.png" alt="Business Card" id="biz-card-mobile" onerror="this.style.display='none'"/>
+          </div>
 
-        <!-- Language Switcher for Maintenance Page -->
-        <button id="m-lang-switch" class="btn-lang-m">
-          <img src="https://flagcdn.com/w40/gb.png" alt="EN" id="m-flag">
-          <span id="m-lang-text">Switch to English</span>
-        </button>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <!-- Language Switcher -->
+            <button id="m-lang-switch" class="btn-lang-m" style="margin: 0;">
+              <img src="https://flagcdn.com/w40/gb.png" alt="EN" id="m-flag">
+              <span id="m-lang-text">Switch to English</span>
+            </button>
 
-        <div class="back-home">
-           <a href="/" class="btn-outline"> <i class="fas fa-home"></i> <span id="m-back">Quay lại Trang chủ</span></a>
-        </div>
+            <!-- Home Button -->
+            <a href="/" class="btn-outline" style="margin: 0;"> 
+                <i class="fas fa-home"></i> 
+                <span id="m-back">Quay lại Trang chủ</span>
+            </a>
+          </div>
       </div>
+
+      <!-- Cột Phải: Ảnh Danh Thiếp (Desktop only) -->
+      <div class="card-display card-desktop">
+        <img src="/assets/card-vn.png" alt="Business Card" id="biz-card" onerror="this.style.display='none'"/>
+      </div>
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -76,7 +275,8 @@
           $("#m-title").text(content.title);
           $("#m-desc").html(content.desc);
           $("#m-lang-text").text(content.btnText);
-          $("#biz-card").attr("src", content.cardSrc);
+          $("#biz-card").attr("src", content.cardSrc); // Desktop image
+          $("#biz-card-mobile").attr("src", content.cardSrc); // Mobile image
           $("#m-flag").attr("src", content.flagSrc);
           $("#m-back").text(content.back);
         });
@@ -84,4 +284,3 @@
     </script>
   </body>
 </html>
-
