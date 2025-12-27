@@ -190,6 +190,7 @@ body {
 
 .home .home-content .text-3 span {
   font-weight: 700;
+  margin-right: 8px; /* Add space between static text and typing text */
 }
 
 .home .home-content .text-3 span.typing {
