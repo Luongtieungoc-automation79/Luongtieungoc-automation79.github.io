@@ -141,26 +141,26 @@ body {
 .home .home-content {
   width: 100%;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr; /* Text side wider */
-  gap: 0 30px; /* Column gap */
+  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-areas:
+    "text img"
+    "actions img";
+  gap: 0 30px;
   align-items: center;
 }
 
 .home-text {
-  grid-column: 1;
-  grid-row: 1;
+  grid-area: text;
 }
 
 .home-actions {
-  grid-column: 1;
-  grid-row: 2;
+  grid-area: actions;
   align-self: start;
 }
 
 /* Image on the right, spanning both text and action rows */
 .home .home-content .home-img {
-  grid-column: 2;
-  grid-row: 1 / span 2;
+  grid-area: img;
   width: 100%;
   display: flex;
   justify-content: center;
