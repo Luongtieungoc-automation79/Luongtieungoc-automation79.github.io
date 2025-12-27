@@ -29,7 +29,8 @@ html {
 body {
   background: var(--bg-color);
   color: var(--navy-dark);
-  /* overflow-x: hidden; - Removed as requested to fix by sizing */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  width: 100%;
 }
 
 /* Custom Scrollbar */
@@ -67,7 +68,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 15px; /* Reduced padding globally for better fit */
 }
 
 .navbar .logo {
@@ -740,12 +741,17 @@ footer a {
 }
 
 @media (max-width: 576px) {
+  /* Global shrink for mobile */
+  html {
+     font-size: 14px; /* Base font size reduction */
+  }
+
   /* Điều chỉnh font chữ cho màn hình nhỏ */
   .home .home-content .text-2 {
-    font-size: 35px;
+    font-size: 28px; /* Reduced from 35px */
   }
   .home .home-content .text-3 {
-    font-size: 22px;
+    font-size: 18px; /* Reduced from 22px */
     min-height: 66px; /* Reserve for 2 lines on mobile if wrapping occurs */
     justify-content: center; /* Center the text content */
   }
