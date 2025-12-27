@@ -666,6 +666,8 @@ footer a {
 @media (max-width: 768px) {
   .menu-btn-icon {
     display: block;
+    z-index: 1000; /* Ensure it's on top */
+    padding-right: 20px; /* Ensure space from edge */
   }
   .navbar .menu {
     position: fixed;
@@ -735,8 +737,6 @@ footer a {
 
   .btn-lang {
     margin: 0 auto; /* Center in mobile menu */
-  .btn-lang {
-    margin: 0 auto; /* Center in mobile menu */
     display: inline-flex;
     margin-top: 10px;
   }
@@ -751,8 +751,8 @@ footer a {
   .home .container, 
   .navbar .container,
   section {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+    padding-left: 20px !important; /* Increased from 15px for better breathing room */
+    padding-right: 20px !important;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
