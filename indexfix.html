@@ -32,11 +32,17 @@
           <li><a href="#skills" class="menu-btn" data-lang="nav_skills">Kỹ năng</a></li>
           <li><a href="#experience" class="menu-btn" data-lang="nav_exp">Kinh nghiệm</a></li>
           <li><a href="#contact" class="menu-btn contact-btn" data-lang="nav_contact">Liên hệ</a></li>
-             <!-- Language Switcher -->
-             <li>
+            <!-- Language Switcher -->
+           <li>
               <button id="lang-switch" class="btn-lang">
                   <img src="https://flagcdn.com/w40/vn.png" alt="VN" class="lang-flag" id="current-lang-flag">
                   <span id="current-lang-text">VN</span>
+              </button>
+            </li>
+            <!-- Dark Mode Toggle -->
+            <li>
+              <button id="theme-toggle" class="btn-theme">
+                <i class="fas fa-moon"></i>
               </button>
             </li>
         </ul>
@@ -45,6 +51,13 @@
         </div>
       </div>
     </nav>
+    
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+    
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
 
     <section class="home" id="home">
       <div class="container">
@@ -53,7 +66,7 @@
           <div class="home-text">
             <div class="text-1" data-lang="home_hello">Xin chào, tôi tên là</div>
             <div class="text-2" data-lang="home_name">Lương Tiểu Ngọc</div>
-            <div class="text-3"><span data-lang="home_role_prefix">Và tôi là </span> <span class="typing"></span></div>
+            <div class="text-3"><span data-lang="home_role_prefix">Và tôi là</span> <span class="typing"></span></div>
             <p data-lang="home_desc">
               Sinh viên ngành Kỹ thuật Điều khiển & Tự động hóa. Đam mê thiết kế
               hệ thống, lập trình PLC và giải pháp công nghiệp thông minh.
@@ -309,11 +322,12 @@
       >
     </footer>
 
+    <div id="particles-js"></div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
-
-
