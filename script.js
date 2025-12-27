@@ -70,7 +70,7 @@ $(document).ready(function () {
 
       home_hello: "Hello, my name is",
       home_name: "Luong Tieu Ngoc",
-      home_role_prefix: "And I'm a ",
+      home_role_prefix: "And I'm a",
       home_desc:
         "Student of Control Engineering & Automation. Passionate about system design, PLC programming, and smart industrial solutions.",
       home_hire_btn: "Hire Me Now",
@@ -208,8 +208,213 @@ $(document).ready(function () {
   AOS.init({
     duration: 1000, // Thời gian chạy hiệu ứng (ms)
     easing: "ease-in-out", // Kiểu chuyển động
-    once: true, // Chỉ chạy 1 lần khi cuộn xuống
     mirror: false,
   });
-});
 
+  // --- DARK MODE TOGGLE ---
+  const themeToggleBot = document.getElementById("theme-toggle");
+  const darkTheme = "dark";
+  const iconTheme = "fa-sun";
+
+  // Previously selected topic (if user selected)
+  const selectedTheme = localStorage.getItem("selected-theme");
+  const selectedIcon = localStorage.getItem("selected-icon");
+
+  const getCurrentTheme = () => document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+  const getCurrentIcon = () => themeToggleBot.querySelector("i").classList.contains("fa-sun") ? "fa-sun" : "fa-moon";
+
+  if (selectedTheme) {
+    document.documentElement.setAttribute("data-theme", selectedTheme === "dark" ? "dark" : "light");
+    themeToggleBot.querySelector("i").classList[selectedTheme === "dark" ? "add" : "remove"](iconTheme);
+    themeToggleBot.querySelector("i").classList[selectedTheme === "dark" ? "remove" : "add"]("fa-moon");
+  }
+
+  themeToggleBot.addEventListener("click", () => {
+    const icon = themeToggleBot.querySelector("i");
+    
+    // 1. Start Animation (Spin out)
+    icon.classList.add("icon-anim");
+
+    // 2. Wait for animation to hide old icon (300ms)
+    setTimeout(() => {
+        // Add or remove the dark / icon theme logic
+        let current = document.documentElement.getAttribute("data-theme");
+        let target = current === "dark" ? "light" : "dark";
+        
+        document.documentElement.setAttribute("data-theme", target);
+        
+        // Swap Icon Classes
+        icon.classList.toggle(iconTheme); // fa-sun
+        icon.classList.toggle("fa-moon");
+
+        localStorage.setItem("selected-theme", getCurrentTheme());
+        localStorage.setItem("selected-icon", getCurrentIcon());
+
+        // 3. End Animation (Spin in new icon)
+        icon.classList.remove("icon-anim");
+    }, 300); // 300ms matches the halfway point or "disappear" time roughly
+  });
+
+  // --- SCROLL PROGRESS BAR ---
+  window.addEventListener("scroll", () => {
+    const scrollTotal = document.documentElement.scrollTop;
+    const heightWin = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollWidth = (scrollTotal / heightWin) * 100;
+    document.querySelector(".scroll-progress").style.width = scrollWidth + "%";
+  });
+
+  // --- CUSTOM CURSOR (Physics Based) ---
+  const cursorDot = document.querySelector(".cursor-dot");
+  const cursorOutline = document.querySelector(".cursor-outline");
+
+  let mouseX = 0;
+  let mouseY = 0;
+  let outlineX = 0;
+  let outlineY = 0;
+
+  // Track Mode Position
+  window.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    
+    // Dot follows instantly
+    cursorDot.style.left = `${mouseX}px`;
+    cursorDot.style.top = `${mouseY}px`;
+  });
+
+  // Animation Queue for smooth "Lerp" movement
+  const animateCursor = () => {
+    // Linear Interpolation: Move current pos 20% closer to target pos every frame
+    // 0.2 is the speed factor (higher = faster catch up)
+    let speed = 0.2; 
+    
+    outlineX += (mouseX - outlineX) * speed;
+    outlineY += (mouseY - outlineY) * speed;
+
+    cursorOutline.style.left = `${outlineX}px`;
+    cursorOutline.style.top = `${outlineY}px`;
+
+    requestAnimationFrame(animateCursor);
+  };
+  animateCursor();
+
+  // Hover effect for cursor
+  const links = document.querySelectorAll("a, button, .card");
+  links.forEach(link => {
+    link.addEventListener("mouseenter", () => {
+      cursorOutline.style.transform = "translate(-50%, -50%) scale(1.5)";
+      cursorOutline.style.backgroundColor = "rgba(0, 86, 179, 0.1)";
+    });
+    link.addEventListener("mouseleave", () => {
+      cursorOutline.style.transform = "translate(-50%, -50%) scale(1)";
+      cursorOutline.style.backgroundColor = "transparent";
+    });
+  });
+
+  // --- Particles.js Config ---
+  particlesJS("particles-js", {
+    "particles": {
+      "number": {
+        "value": 80,
+        "density": {
+          "enable": true,
+          "value_area": 800
+        }
+      },
+      "color": {
+        "value": "#0056b3" /* Primary Blue */
+      },
+      "shape": {
+        "type": "circle",
+        "stroke": {
+          "width": 0,
+          "color": "#000000"
+        },
+        "polygon": {
+          "nb_sides": 5
+        }
+      },
+      "opacity": {
+        "value": 0.5,
+        "random": false,
+        "anim": {
+          "enable": false,
+          "speed": 1,
+          "opacity_min": 0.1,
+          "sync": false
+        }
+      },
+      "size": {
+        "value": 3,
+        "random": true,
+        "anim": {
+          "enable": false,
+          "speed": 40,
+          "size_min": 0.1,
+          "sync": false
+        }
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#0056b3",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 3,
+        "direction": "none",
+        "random": false,
+        "straight": false,
+        "out_mode": "out",
+        "bounce": false,
+        "attract": {
+          "enable": false,
+          "rotateX": 600,
+          "rotateY": 1200
+        }
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": {
+          "enable": true,
+          "mode": "grab"
+        },
+        "onclick": {
+          "enable": true,
+          "mode": "push"
+        },
+        "resize": true
+      },
+      "modes": {
+        "grab": {
+          "distance": 140,
+          "line_linked": {
+            "opacity": 1
+          }
+        },
+        "bubble": {
+          "distance": 400,
+          "size": 40,
+          "duration": 2,
+          "opacity": 8,
+          "speed": 3
+        },
+        "repulse": {
+          "distance": 200,
+          "duration": 0.4
+        },
+        "push": {
+          "particles_nb": 4
+        },
+        "remove": {
+          "particles_nb": 2
+        }
+      }
+    },
+    "retina_detect": true
+  });
+});
