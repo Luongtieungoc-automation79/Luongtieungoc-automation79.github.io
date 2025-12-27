@@ -637,12 +637,12 @@ footer a {
     font-size: 50px;
   }
   .home .home-img img {
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
   }
   .glowing-circle {
-    width: 320px;
-    height: 320px;
+    width: 300px;
+    height: 300px;
   }
   .timeline::before {
     left: 20px;
@@ -735,8 +735,34 @@ footer a {
 
   .btn-lang {
     margin: 0 auto; /* Center in mobile menu */
+  .btn-lang {
+    margin: 0 auto; /* Center in mobile menu */
     display: inline-flex;
     margin-top: 10px;
+  }
+
+  /* Aggressive Overflow Protection for Mobile */
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  .home .container, 
+  .navbar .container,
+  section {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .home .home-content {
+      width: 100%;
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
   }
 }
 
@@ -764,15 +790,16 @@ footer a {
   }
 
   /* Xử lý ảnh và vòng tròn phát sáng để không bị tràn - Thu nhỏ thêm */
+  /* Xử lý ảnh và vòng tròn phát sáng để không bị tràn - Thu nhỏ thêm */
   .glowing-circle {
-    width: 240px;
-    height: 240px;
-    max-width: 80vw; /* Thu nhỏ thêm */
+    width: 220px; /* Reduced further */
+    height: 220px;
+    max-width: 80vw;
     max-height: 80vw;
   }
   .home .home-img img {
-    width: 220px;
-    height: 220px;
+    width: 200px; /* Reduced further */
+    height: 200px;
     max-width: 75vw;
     max-height: 75vw;
     border-width: 4px;
@@ -943,4 +970,5 @@ footer a {
 
 .back-home {
   margin-top: 20px;
+}
 }
