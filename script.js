@@ -22,8 +22,8 @@ $(document).ready(function () {
         "Hiện là sinh viên năm 4 tại Đại học Nông Lâm TPHCM. Tôi có kinh nghiệm thực chiến trong việc đấu nối tủ điện, thiết kế trên phần mềm Autocad, thiết kế mạch PCB và làm việc với các hệ thống điều khiển tự động. <br /><br /> Tôi luôn khao khát cơ hội vận dụng kiến thức chuyên môn vào các dự án thực tiễn, đặc biệt là trong lĩnh vực Tự động hóa và IoT. Tôi mong muốn làm việc tại khu vực Thành Phố Hồ Chí Minh, các vùng phụ cận hoặc tại Khánh Hòa.",
       about_school_label: "Trường:",
       about_school_name: "Đại học Nông Lâm TP.HCM",
-      about_location_label: "Nơi ở hiện tại:",
-      about_location_val: "KTX KHU B, Đ. Mạc Đĩnh Chi, Khu phố Tân Hòa, Dĩ An, Bình Dương, Việt Nam",
+      about_location_label: "Nơi ở:",
+      about_location_val: "Khánh Hòa, Việt Nam",
 
       skills_title: "Kỹ năng chuyên môn",
       skill_1_title: "Lập trình Điều khiển",
@@ -31,7 +31,7 @@ $(document).ready(function () {
         "PLC, Arduino, PIC16, Raspberry Pi. Tư duy logic và thuật toán điều khiển.",
       skill_2_title: "Thiết kế Kỹ thuật",
       skill_2_desc:
-        "AutoCAD, Thiết kế mạch in (PCB), Đọc hiểu bản vẽ kỹ thuật bố trí tàu.",
+        "AutoCAD, Thiết kế mạch in (PCB), Thiết kế & Đọc hiểu bản vẽ điện, bản vẽ kỹ thuật bố trí tàu.",
       skill_3_title: "Thi công & Lắp đặt",
       skill_3_desc:
         "Đấu nối tủ điện công nghiệp, lắp ráp máy tự động, xử lý sự cố.",
@@ -82,26 +82,26 @@ $(document).ready(function () {
         "Currently a 4th-year student at Nong Lam University, HCMC. I have hands-on experience in electrical cabinet wiring, Autocad design, PCB design, and working with automatic control systems. <br /><br /> I am always eager to apply my professional knowledge to practical projects, especially in Automation and IoT. I'm looking for opportunities in Ho Chi Minh City, surrounding areas, or Khanh Hoa.",
       about_school_label: "University:",
       about_school_name: "Nong Lam University HCMC",
-      about_location_label: "Current Address:",
-      about_location_val: "Dormitory Area B, Di An City, Binh Duong, Vietnam",
+      about_location_label: "Location:",
+      about_location_val: "Khanh Hoa, Vietnam",
 
       skills_title: "Professional Skills",
       skill_1_title: "Control Programming",
       skill_1_desc:
         "PLC, Arduino, PIC16, Raspberry Pi. Logical thinking and control algorithms.",
       skill_2_title: "Technical Design",
-      skill_2_desc:
-        "AutoCAD, PCB Design, Reading technical layout drawings.",
+      skill_2_desc: "AutoCAD, PCB Design, Design & Reading electrical drawings, technical layout drawings.",
       skill_3_title: "Construction & Installation",
       skill_3_desc:
         "Industrial cabinet wiring, automatic machine assembly, troubleshooting.",
       skill_4_title: "Soft Skills",
       skill_4_desc:
-        "Teamwork, Problem-solving, Reading specialized English documents.",
+        "Teamwork, Problem Solving, Reading specialized English documents.",
 
       exp_title: "Experience Journey",
       exp_1_role: "Ship Design Intern",
-      exp_1_desc_1: "Designed production drawings, supported the hull department.",
+      exp_1_desc_1:
+        "Designed production drawings, supported the hull department.",
       exp_1_desc_2: "Learned company standards and specialized software.",
       exp_2_role: "Technical Intern",
       exp_2_desc_1:
@@ -109,8 +109,10 @@ $(document).ready(function () {
       exp_2_desc_2: "Researched Raspberry Pi applications.",
       exp_3_org: "Nong Lam University HCMC",
       exp_3_role: "Student of Control Engineering & Automation",
-      exp_3_desc_1: "Achieved Academic Scholarship (Excellent) Semester 2 2022-2023.",
-      exp_3_desc_2: "Participated in faculty-level scientific research projects.",
+      exp_3_desc_1:
+        "Achieved Academic Scholarship (Excellent) Semester 2 2022-2023.",
+      exp_3_desc_2:
+        "Participated in faculty-level scientific research projects.",
 
       contact_title: "Contact",
       contact_connect: "Get in Touch",
@@ -128,6 +130,9 @@ $(document).ready(function () {
 
   // Hàm cập nhật nội dung
   function updateContent(lang) {
+    // Set HTML lang attribute for CSS targeting
+    $("html").attr("lang", lang);
+
     // Cập nhật các text element có data-lang
     $("[data-lang]").each(function () {
       const key = $(this).attr("data-lang");
@@ -220,45 +225,60 @@ $(document).ready(function () {
   const selectedTheme = localStorage.getItem("selected-theme");
   const selectedIcon = localStorage.getItem("selected-icon");
 
-  const getCurrentTheme = () => document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
-  const getCurrentIcon = () => themeToggleBot.querySelector("i").classList.contains("fa-sun") ? "fa-sun" : "fa-moon";
+  const getCurrentTheme = () =>
+    document.documentElement.getAttribute("data-theme") === "dark"
+      ? "dark"
+      : "light";
+  const getCurrentIcon = () =>
+    themeToggleBot.querySelector("i").classList.contains("fa-sun")
+      ? "fa-sun"
+      : "fa-moon";
 
   if (selectedTheme) {
-    document.documentElement.setAttribute("data-theme", selectedTheme === "dark" ? "dark" : "light");
-    themeToggleBot.querySelector("i").classList[selectedTheme === "dark" ? "add" : "remove"](iconTheme);
-    themeToggleBot.querySelector("i").classList[selectedTheme === "dark" ? "remove" : "add"]("fa-moon");
+    document.documentElement.setAttribute(
+      "data-theme",
+      selectedTheme === "dark" ? "dark" : "light"
+    );
+    themeToggleBot
+      .querySelector("i")
+      .classList[selectedTheme === "dark" ? "add" : "remove"](iconTheme);
+    themeToggleBot
+      .querySelector("i")
+      .classList[selectedTheme === "dark" ? "remove" : "add"]("fa-moon");
   }
 
   themeToggleBot.addEventListener("click", () => {
     const icon = themeToggleBot.querySelector("i");
-    
+
     // 1. Start Animation (Spin out)
     icon.classList.add("icon-anim");
 
     // 2. Wait for animation to hide old icon (300ms)
     setTimeout(() => {
-        // Add or remove the dark / icon theme logic
-        let current = document.documentElement.getAttribute("data-theme");
-        let target = current === "dark" ? "light" : "dark";
-        
-        document.documentElement.setAttribute("data-theme", target);
-        
-        // Swap Icon Classes
-        icon.classList.toggle(iconTheme); // fa-sun
-        icon.classList.toggle("fa-moon");
+      // Add or remove the dark / icon theme logic
+      let current = document.documentElement.getAttribute("data-theme");
+      let target = current === "dark" ? "light" : "dark";
 
-        localStorage.setItem("selected-theme", getCurrentTheme());
-        localStorage.setItem("selected-icon", getCurrentIcon());
+      document.documentElement.setAttribute("data-theme", target);
 
-        // 3. End Animation (Spin in new icon)
-        icon.classList.remove("icon-anim");
+      // Swap Icon Classes
+      icon.classList.toggle(iconTheme); // fa-sun
+      icon.classList.toggle("fa-moon");
+
+      localStorage.setItem("selected-theme", getCurrentTheme());
+      localStorage.setItem("selected-icon", getCurrentIcon());
+
+      // 3. End Animation (Spin in new icon)
+      icon.classList.remove("icon-anim");
     }, 300); // 300ms matches the halfway point or "disappear" time roughly
   });
 
   // --- SCROLL PROGRESS BAR ---
   window.addEventListener("scroll", () => {
     const scrollTotal = document.documentElement.scrollTop;
-    const heightWin = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const heightWin =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
     const scrollWidth = (scrollTotal / heightWin) * 100;
     document.querySelector(".scroll-progress").style.width = scrollWidth + "%";
   });
@@ -276,7 +296,7 @@ $(document).ready(function () {
   window.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-    
+
     // Dot follows instantly
     cursorDot.style.left = `${mouseX}px`;
     cursorDot.style.top = `${mouseY}px`;
@@ -286,8 +306,8 @@ $(document).ready(function () {
   const animateCursor = () => {
     // Linear Interpolation: Move current pos 20% closer to target pos every frame
     // 0.2 is the speed factor (higher = faster catch up)
-    let speed = 0.2; 
-    
+    let speed = 0.2;
+
     outlineX += (mouseX - outlineX) * speed;
     outlineY += (mouseY - outlineY) * speed;
 
@@ -300,7 +320,7 @@ $(document).ready(function () {
 
   // Hover effect for cursor
   const links = document.querySelectorAll("a, button, .card");
-  links.forEach(link => {
+  links.forEach((link) => {
     link.addEventListener("mouseenter", () => {
       cursorOutline.style.transform = "translate(-50%, -50%) scale(1.5)";
       cursorOutline.style.backgroundColor = "rgba(0, 86, 179, 0.1)";
@@ -313,109 +333,357 @@ $(document).ready(function () {
 
   // --- Particles.js Config ---
   particlesJS("particles-js", {
-    "particles": {
-      "number": {
-        "value": 80,
-        "density": {
-          "enable": true,
-          "value_area": 800
-        }
-      },
-      "color": {
-        "value": "#0056b3" /* Primary Blue */
-      },
-      "shape": {
-        "type": "circle",
-        "stroke": {
-          "width": 0,
-          "color": "#000000"
+    particles: {
+      number: {
+        value: 80,
+        density: {
+          enable: true,
+          value_area: 800,
         },
-        "polygon": {
-          "nb_sides": 5
-        }
       },
-      "opacity": {
-        "value": 0.5,
-        "random": false,
-        "anim": {
-          "enable": false,
-          "speed": 1,
-          "opacity_min": 0.1,
-          "sync": false
-        }
+      color: {
+        value: "#0056b3" /* Primary Blue */,
       },
-      "size": {
-        "value": 3,
-        "random": true,
-        "anim": {
-          "enable": false,
-          "speed": 40,
-          "size_min": 0.1,
-          "sync": false
-        }
+      shape: {
+        type: "circle",
+        stroke: {
+          width: 0,
+          color: "#000000",
+        },
+        polygon: {
+          nb_sides: 5,
+        },
       },
-      "line_linked": {
-        "enable": true,
-        "distance": 150,
-        "color": "#0056b3",
-        "opacity": 0.4,
-        "width": 1
+      opacity: {
+        value: 0.5,
+        random: false,
+        anim: {
+          enable: false,
+          speed: 1,
+          opacity_min: 0.1,
+          sync: false,
+        },
       },
-      "move": {
-        "enable": true,
-        "speed": 3,
-        "direction": "none",
-        "random": false,
-        "straight": false,
-        "out_mode": "out",
-        "bounce": false,
-        "attract": {
-          "enable": false,
-          "rotateX": 600,
-          "rotateY": 1200
+      size: {
+        value: 3,
+        random: true,
+        anim: {
+          enable: false,
+          speed: 40,
+          size_min: 0.1,
+          sync: false,
+        },
+      },
+      line_linked: {
+        enable: true,
+        distance: 150,
+        color: "#0056b3",
+        opacity: 0.4,
+        width: 1,
+      },
+      move: {
+        enable: true,
+        speed: 3,
+        direction: "none",
+        random: false,
+        straight: false,
+        out_mode: "out",
+        bounce: false,
+        attract: {
+          enable: false,
+          rotateX: 600,
+          rotateY: 1200,
+        },
+      },
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onhover: {
+          enable: true,
+          mode: "grab",
+        },
+        onclick: {
+          enable: true,
+          mode: "push",
+        },
+        resize: true,
+      },
+      modes: {
+        grab: {
+          distance: 140,
+          line_linked: {
+            opacity: 1,
+          },
+        },
+        bubble: {
+          distance: 400,
+          size: 40,
+          duration: 2,
+          opacity: 8,
+          speed: 3,
+        },
+        repulse: {
+          distance: 200,
+          duration: 0.4,
+        },
+        push: {
+          particles_nb: 4,
+        },
+        remove: {
+          particles_nb: 2,
+        },
+      },
+    },
+    retina_detect: true,
+  });
+
+  // --- PROJECT EXPLORER DATA ---
+  // Hardcoded structure based on the project folder
+  const projectData = {
+    control: {
+      name: "Lập trình Điều khiển", // Mapped to 'lập trình điều khiển'
+      type: "folder",
+      icon: "fa-microchip",
+      children: {
+        arduino: {
+          name: "Arduino",
+          type: "folder",
+          icon: "fa-infinity",
+          children: {} // Empty as per dir check
         }
       }
     },
-    "interactivity": {
-      "detect_on": "canvas",
-      "events": {
-        "onhover": {
-          "enable": true,
-          "mode": "grab"
-        },
-        "onclick": {
-          "enable": true,
-          "mode": "push"
-        },
-        "resize": true
-      },
-      "modes": {
-        "grab": {
-          "distance": 140,
-          "line_linked": {
-            "opacity": 1
+    design: {
+      name: "Thiết kế Kỹ thuật", // Mapped to 'Thiết kế'
+      type: "folder",
+      icon: "fa-pen-ruler",
+      children: {
+        cad: {
+          name: "CAD", // 'cad'
+          type: "folder",
+          icon: "fa-drafting-compass",
+          children: {
+            scada: {
+              name: "Scada Cân Gạo Tự Động", // 'Scada_can_gao_tu_dong'
+              type: "folder",
+              icon: "fa-industry",
+              children: {
+                "BTC-01.pdf": { name: "BTC-01.pdf", type: "file", label: "Bản vẽ Bố trí chung", ext: "pdf", path: "project/Thiết kế/cad/Scada_can_gao_tu_dong/BTC-01.pdf" },
+                "CT-01.pdf": { name: "CT-01.pdf", type: "file", label: "Chi tiết 01", ext: "pdf", path: "project/Thiết kế/cad/Scada_can_gao_tu_dong/CT-01.pdf" },
+                "CT-02.pdf": { name: "CT-02.pdf", type: "file", label: "Chi tiết 02", ext: "pdf", path: "project/Thiết kế/cad/Scada_can_gao_tu_dong/CT-02.pdf" },
+                "CT-03.pdf": { name: "CT-03.pdf", type: "file", label: "Chi tiết 03", ext: "pdf", path: "project/Thiết kế/cad/Scada_can_gao_tu_dong/CT-03.pdf" },
+                "CT-04.pdf": { name: "CT-04.pdf", type: "file", label: "Chi tiết 04", ext: "pdf", path: "project/Thiết kế/cad/Scada_can_gao_tu_dong/CT-04.pdf" }
+              }
+            },
+            iot: {
+              name: "IoT Giám Sát Năng Lượng", // 'iot_giam_sat_nang_luong'
+              type: "folder",
+              icon: "fa-bolt",
+              children: {
+                "ban_ve_chieu_bang.pdf": { name: "Bản vẽ chiếu bằng.pdf", type: "file", label: "Bản vẽ chiếu bằng", ext: "pdf", path: "project/Thiết kế/cad/iot_giam_sat_nang_luong/ban_ve_chieu_bang.pdf" },
+                "ban_ve_chieu_canh.pdf": {
+                  name: "Bản vẽ chiếu cạnh.pdf",
+                  type: "file",
+                  label: "Bản vẽ chiếu cạnh",
+                  ext: "pdf",
+                  path: "project/Thiết kế/cad/iot_giam_sat_nang_luong/ban_ve_chieu_canh.pdf",
+                },
+                "ban_ve_chieu_dung.pdf": { name: "Bản vẽ chiếu đứng.pdf", type: "file", label: "Bản vẽ chiếu đứng", ext: "pdf", path: "project/Thiết kế/cad/iot_giam_sat_nang_luong/ban_ve_chieu_dung.pdf" }
+              }
+            }
           }
         },
-        "bubble": {
-          "distance": 400,
-          "size": 40,
-          "duration": 2,
-          "opacity": 8,
-          "speed": 3
-        },
-        "repulse": {
-          "distance": 200,
-          "duration": 0.4
-        },
-        "push": {
-          "particles_nb": 4
-        },
-        "remove": {
-          "particles_nb": 2
+        proteus: {
+          name: "Proteus", // 'proteus'
+          type: "folder",
+          icon: "fa-project-diagram",
+          children: {
+            iot_proteus: {
+              name: "IoT Giám Sát Năng Lượng", // 'iot_giam_sat_nang_luong'
+              type: "folder",
+              icon: "fa-bolt",
+              children: {
+                "chieu_bang_1.jpg": { name: "Chiếu bằng 1", type: "file", ext: "image", path: "project/Thiết kế/proteus/iot_giam_sat_nang_luong/chieu_bang_1.jpg" },
+                "chieu_canh1.jpg": { name: "Chiếu cạnh 1", type: "file", ext: "image", path: "project/Thiết kế/proteus/iot_giam_sat_nang_luong/chieu_canh1.jpg" },
+                "chieu_dung_1.jpg": { name: "Chiếu đứng 1", type: "file", ext: "image", path: "project/Thiết kế/proteus/iot_giam_sat_nang_luong/chieu_dung_1.jpg" }
+              }
+            }
+          }
         }
       }
     },
-    "retina_detect": true
-  });
-});
+    construction: {
+      name: "Thi công & Lắp đặt", // 'Thi_công'
+      type: "folder",
+      icon: "fa-hard-hat",
+      children: {
+        "AA_tay_ninh.jpg": { name: "AA Tây Ninh", type: "file", ext: "image", path: "project/Thi_công/AA_tay_ninh.jpg" },
+        "dau_tu_may_nem.jpg": { name: "Đầu tư máy nệm", type: "file", ext: "image", path: "project/Thi_công/dau_tu_may_nem.jpg" },
+        "may_dem_san_pham1.jpg": { name: "Máy đếm sản phẩm 1", type: "file", ext: "image", path: "project/Thi_công/may_dem_san_pham1.jpg" },
+        "may_dem_san_pham2.jpg": { name: "Máy đếm sản phẩm 2", type: "file", ext: "image", path: "project/Thi_công/may_dem_san_pham2.jpg" }
+      }
+    }
+  };
 
+  // State Management
+  let currentPath = [];
+  let currentRoot = null;
+
+  // Global Functions (attached to window for HTML access)
+  window.openExplorer = function(categoryKey) {
+    const musicBg = document.getElementById("project-modal");
+    if (!musicBg) return;
+    
+    currentRoot = projectData[categoryKey];
+    if (!currentRoot) {
+        console.error("Category not found:", categoryKey);
+        return;
+    }
+
+    currentPath = []; // Reset path
+    musicBg.style.display = "block";
+    renderExplorer();
+  };
+
+  window.closeExplorer = function() {
+    const modal = document.getElementById("project-modal");
+    if (modal) modal.style.display = "none";
+    $("#file-preview").hide().empty(); // Clear preview
+  };
+
+  // Close modal when clicking outside
+  window.onclick = function(event) {
+    const modal = document.getElementById("project-modal");
+    if (event.target == modal) {
+      window.closeExplorer();
+    }
+    const lightbox = document.getElementById("lightbox-modal");
+    if (event.target == lightbox) {
+        window.closeLightbox();
+    }
+  };
+
+  function renderExplorer() {
+    const grid = $("#modal-grid");
+    const breadcrumb = $("#modal-breadcrumb");
+    const previewArea = $("#file-preview");
+    
+    // Clear previous content
+    grid.empty();
+    breadcrumb.empty();
+    previewArea.hide().empty();
+    grid.show(); 
+
+    // 1. Render Breadcrumb
+    breadcrumb.append(`<div class="breadcrumb-item" onclick="navigateTo(-1)"><i class="fas fa-home"></i> ${currentRoot.name}</div>`);
+    
+    currentPath.forEach((folder, index) => {
+      breadcrumb.append(`<span class="breadcrumb-separator">/</span>`);
+      if (index === currentPath.length - 1) {
+         breadcrumb.append(`<div class="breadcrumb-current">${folder.name}</div>`);
+      } else {
+         breadcrumb.append(`<div class="breadcrumb-item" onclick="navigateTo(${index})">${folder.name}</div>`);
+      }
+    });
+
+    // 2. Determine Current Folder Data
+    let currentFolderData = currentRoot;
+    for (const folder of currentPath) {
+      currentFolderData = currentFolderData.children[folder.key];
+    }
+
+    // 3. Render Grid Items
+    const items = currentFolderData.children;
+    if (Object.keys(items).length === 0) {
+      grid.html('<p style="width:100%; text-align:center; color: #888;">Thư mục trống</p>');
+      return;
+    }
+
+    for (const key in items) {
+      const item = items[key];
+      let el;
+
+      if (item.type === "file") {
+          if (item.ext === "image") {
+              // RENDER IMAGE CARD
+              el = $(`
+                <div class="grid-item image-card">
+                  <img src="${item.path}" alt="${item.name}" loading="lazy">
+                  <div class="card-caption">${item.name}</div>
+                </div>
+              `);
+          } else if (item.ext === "pdf") {
+              // RENDER PDF CARD
+              // User Label for PDF is often cleaner than filename, use item.label if exists, else name
+              let displayName = item.label || item.name;
+              el = $(`
+                <div class="grid-item pdf-card">
+                  <div class="pdf-icon-box">
+                    <i class="fas fa-file-pdf"></i>
+                  </div>
+                  <div class="card-caption">${displayName}</div>
+                </div>
+              `);
+          }
+      } else {
+          // FOLDER RENDER
+          // Use Custom icon if available, else default
+          let iconClass = item.icon || "fa-folder";
+          
+          el = $(`
+            <div class="grid-item folder-card">
+              <i class="fas ${iconClass}"></i>
+              <span>${item.name}</span>
+            </div>
+          `);
+      }
+
+      // Add click event for all types
+      if (el) {
+          el.click(() => handleItemClick(key, item));
+          grid.append(el);
+      }
+    }
+  }
+
+  window.navigateTo = function(index) {
+    if (index === -1) {
+      currentPath = [];
+    } else {
+      currentPath = currentPath.slice(0, index + 1);
+    }
+    renderExplorer();
+  };
+
+  function handleItemClick(key, item) {
+    if (item.type === "folder") {
+      // Enter Folder
+      currentPath.push({ key: key, name: item.name });
+      renderExplorer();
+    } else if (item.type === "file") {
+      // Open File
+      if (item.ext === "pdf") {
+        window.open(item.path, "_blank");
+      } else if (item.ext === "image") {
+        openLightbox(item.path, item.name);
+      }
+    }
+  }
+
+  // --- LIGHTBOX FUNCTIONS ---
+  window.openLightbox = function(src, caption) {
+    const lightbox = document.getElementById("lightbox-modal");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+    
+    lightbox.style.display = "block";
+    lightboxImg.src = src;
+    lightboxImg.alt = caption; // Add atl text for accessibility
+    lightboxCaption.innerHTML = caption;
+  }
+
+  window.closeLightbox = function() {
+    document.getElementById("lightbox-modal").style.display = "none";
+  }
+});
