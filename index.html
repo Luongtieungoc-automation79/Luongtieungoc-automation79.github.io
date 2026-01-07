@@ -162,8 +162,8 @@
                 </span>
               </div>
               <div class="info-item">
-                <span class="label" data-lang="about_location_label">Nơi ở hiện tại:</span>
-                <span class="value" data-lang="about_location_val">KTX KHU B, Đ. Mạc Đĩnh Chi, Khu phố Tân Hòa, Dĩ An, Bình Dương, Việt Nam</span>
+                <span class="label" data-lang="about_location_label">Nơi ở:</span>
+                <span class="value" data-lang="about_location_val">Khánh Hòa, Việt Nam</span>
               </div>
             </div>
           </div>
@@ -175,7 +175,7 @@
       <div class="container">
         <h2 class="title" data-aos="fade-down" data-lang="skills_title">Kỹ năng chuyên môn</h2>
         <div class="skills-content">
-          <div class="card" data-aos="flip-left" data-aos-delay="100">
+          <div class="card" data-aos="flip-left" data-aos-delay="100" onclick="openExplorer('control')">
             <div class="box">
               <i class="fas fa-laptop-code"></i>
               <div class="text" data-lang="skill_1_title">Lập trình Điều khiển</div>
@@ -185,17 +185,16 @@
               </p>
             </div>
           </div>
-          <div class="card" data-aos="flip-left" data-aos-delay="200">
+          <div class="card" data-aos="flip-left" data-aos-delay="200" onclick="openExplorer('design')">
             <div class="box">
               <i class="fas fa-pencil-ruler"></i>
               <div class="text" data-lang="skill_2_title">Thiết kế Kỹ thuật</div>
               <p data-lang="skill_2_desc">
-                AutoCAD, Thiết kế mạch in (PCB), Đọc hiểu bản vẽ kỹ thuật bố trí
-                tàu.
+                AutoCAD, Thiết kế mạch in (PCB), Thiết kế & Đọc hiểu bản vẽ điện, bản vẽ kỹ thuật bố trí tàu.
               </p>
             </div>
           </div>
-          <div class="card" data-aos="flip-left" data-aos-delay="300">
+          <div class="card" data-aos="flip-left" data-aos-delay="300" onclick="openExplorer('construction')">
             <div class="box">
               <i class="fas fa-cogs"></i>
               <div class="text" data-lang="skill_3_title">Thi công & Lắp đặt</div>
@@ -322,7 +321,34 @@
       >
     </footer>
 
+    <!-- Project Explorer Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="breadcrumb" id="modal-breadcrumb">
+                   <!-- JS will populate this -->
+                </div>
+                <span class="close-btn" onclick="closeExplorer()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="grid-container" id="modal-grid">
+                    <!-- JS will populate this -->
+                </div>
+                <div id="file-preview" class="file-preview-area">
+                    <!-- Preview content -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="particles-js"></div>
+
+    <!-- Lightbox for Image Viewing -->
+    <div id="lightbox-modal" class="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
@@ -331,4 +357,3 @@
     <script src="script.js"></script>
   </body>
 </html>
-
