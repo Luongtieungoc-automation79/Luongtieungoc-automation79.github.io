@@ -23,7 +23,12 @@
 [data-theme="dark"] {
   /* Dark Mode Contrast Fixes */
   --bg-color: #020c1b;
-  --card-bg: rgba(17, 34, 64, 0.95); /* Increased opacity for better readability */
+  --card-bg: rgba(
+    17,
+    34,
+    64,
+    0.95
+  ); /* Increased opacity for better readability */
   --navy-dark: #ccd6f6; /* Brighter white-blue */
   --navy-light: #233554;
   --text-grey: #a8b2d1; /* Lighter grey for better contrast on dark */
@@ -67,7 +72,8 @@
   height: 30px;
   border: 2px solid var(--primary-color);
 }
-.cursor-dot, .cursor-outline {
+.cursor-dot,
+.cursor-outline {
   position: fixed;
   top: 0;
   left: 0;
@@ -85,7 +91,10 @@
   transition: transform 0.2s ease-out, background-color 0.2s;
 }
 @media (min-width: 992px) {
-  .cursor-dot, .cursor-outline { display: block; }
+  .cursor-dot,
+  .cursor-outline {
+    display: block;
+  }
 }
 
 /* Dark Mode Toggle Button */
@@ -428,9 +437,10 @@ body {
     rgba(135, 206, 250, 0.05) 60%,
     rgba(135, 206, 250, 0.8) 100% /* Light Sky Blue 80% */
   );
-  
+
   /* Xoay từ tốn + Thở nhẹ */
-  animation: rotate 4s linear infinite, auraPulse 3s ease-in-out infinite alternate;
+  animation: rotate 4s linear infinite,
+    auraPulse 3s ease-in-out infinite alternate;
   z-index: 1;
   /* Viền mỏng Sky Blue */
   border: 1px solid rgba(135, 206, 250, 0.1);
@@ -450,20 +460,24 @@ body {
 }
 
 @keyframes rotate {
-  0% { rotate: 0deg; }
-  100% { rotate: 360deg; }
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
 }
 
 @keyframes fadeGlow {
-  0% { 
-    opacity: 0.6; 
-    scale: 1;  /* Independent Property */
-    filter: brightness(1); 
+  0% {
+    opacity: 0.6;
+    scale: 1; /* Independent Property */
+    filter: brightness(1);
   }
-  100% { 
-    opacity: 1; 
+  100% {
+    opacity: 1;
     scale: 1.05; /* Independent Property */
-    filter: brightness(1.3); 
+    filter: brightness(1.3);
   }
 }
 
@@ -600,8 +614,13 @@ section {
 }
 
 @keyframes float-icon {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .skills .card .box i {
@@ -775,7 +794,8 @@ section {
 }
 
 /* Remove the pseudo-elements (rotating gradient) */
-.qr-box::before, .qr-box::after {
+.qr-box::before,
+.qr-box::after {
   display: none;
 }
 
@@ -905,7 +925,7 @@ footer a {
     left: -100%;
     top: 0;
     /* Use variable for background to adapt to Dark Mode */
-    background: var(--card-bg); 
+    background: var(--card-bg);
     /* Fallback/Ensure solid color in Light Mode if card-bg is transparent */
     backdrop-filter: blur(10px);
     text-align: center;
@@ -925,7 +945,7 @@ footer a {
     padding-bottom: 50px;
     padding-top: 100px;
   }
-  
+
   .home .home-content {
     display: flex;
     flex-direction: column;
@@ -936,14 +956,16 @@ footer a {
   }
 
   /* Reset Grid placements for Mobile */
-  .home-text, .home-actions, .home .home-content .home-img {
+  .home-text,
+  .home-actions,
+  .home .home-content .home-img {
     grid-column: auto;
     grid-row: auto;
     width: 100%;
   }
 
   /* Order: Text(1) -> Image(2) -> Actions(3) is natural DOM order now */
-  
+
   .home .home-img {
     justify-content: center;
     align-items: center;
@@ -967,20 +989,22 @@ footer a {
     padding: 0 20px;
   }
 
-  .btn-lang, .btn-theme {
+  .btn-lang,
+  .btn-theme {
     margin: 10px auto !important; /* Force center */
     display: inline-flex;
     width: fit-content;
   }
 
   /* Aggressive Overflow Protection for Mobile */
-  html, body {
+  html,
+  body {
     width: 100%;
     overflow-x: hidden;
     position: relative;
   }
-  
-  .home .container, 
+
+  .home .container,
   .navbar .container,
   section {
     padding-left: 20px !important; /* Increased from 15px for better breathing room */
@@ -991,17 +1015,17 @@ footer a {
   }
 
   .home .home-content {
-      width: 100%;
-      max-width: 100%;
-      margin-left: 0;
-      margin-right: 0;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 @media (max-width: 576px) {
   /* Global shrink for mobile */
   html {
-     font-size: 14px; /* Base font size reduction */
+    font-size: 14px; /* Base font size reduction */
   }
 
   /* Điều chỉnh font chữ cho màn hình nhỏ */
@@ -1086,7 +1110,7 @@ footer a {
   /* Logo adjustment for mobile to prevent overlap with menu */
   .navbar .logo {
     font-size: 22px; /* Reduced from 30px */
-    max-width: 70%;  /* Ensure it doesn't push menu out */
+    max-width: 70%; /* Ensure it doesn't push menu out */
   }
 }
 
@@ -1120,7 +1144,7 @@ footer a {
   height: 20px;
   border-radius: 4px; /* Softer corners */
   object-fit: cover;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .btn-lang span {
@@ -1178,7 +1202,7 @@ footer a {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   max-height: 400px; /* Limit height */
   object-fit: contain;
 }
@@ -1210,4 +1234,488 @@ footer a {
 
 .back-home {
   margin-top: 20px;
+}
+
+/* --- Project Explorer Modal --- */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background-color: var(--card-bg);
+  margin: 5% auto;
+  padding: 0;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 900px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  border: 1px solid rgba(0, 86, 179, 0.2);
+}
+
+.modal-header {
+  padding: 15px 25px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 86, 179, 0.05);
+  border-radius: 15px 15px 0 0;
+}
+
+.close-btn {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  color: var(--primary-color);
+}
+
+.breadcrumb {
+  font-size: 18px;
+  color: var(--navy-dark);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.breadcrumb-item {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.breadcrumb-item:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  color: var(--text-grey);
+  font-size: 14px;
+}
+
+.breadcrumb-current {
+  color: var(--text-grey);
+  cursor: default;
+}
+
+.breadcrumb-current:hover {
+  color: var(--text-grey);
+  text-decoration: none;
+}
+
+.modal-body {
+  padding: 25px;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  transition: 0.2s;
+  background: transparent;
+}
+
+.grid-item:hover {
+  background: rgba(0, 86, 179, 0.05);
+  transform: translateY(-2px);
+}
+
+.grid-item i {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #f7b926; /* Folder Color */
+}
+
+.grid-item.is-file i {
+  color: var(--text-grey);
+}
+.grid-item.is-file.pdf i {
+  color: #e74c3c;
+}
+.grid-item.is-file.image i {
+  color: #3498db;
+}
+
+.grid-item span {
+  font-size: 14px;
+  color: var(--navy-dark);
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+/* File Preview Area */
+.file-preview-area {
+  margin-top: 20px;
+  width: 100%;
+  flex: 1;
+  display: none; /* Hidden unless previewing */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.file-preview-area img {
+  max-width: 100%;
+  max-height: 50vh;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .modal-content {
+  background-color: var(--card-bg);
+  border: 1px solid var(--primary-color);
+}
+[data-theme="dark"] .modal-header {
+  background: rgba(100, 255, 218, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+[data-theme="dark"] .grid-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+[data-theme="dark"] .grid-item span {
+  color: #e6f1ff;
+}
+
+[data-theme="dark"] .grid-item span {
+    color: #e6f1ff;
+}
+
+/* --- GALLERY VIEW STYLES --- */
+.grid-container {
+  display: grid;
+  /* Auto-fill but minimum 150px for decent image size */
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.grid-item {
+  position: relative; /* For text overlay */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center content */
+  text-align: center;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background: transparent;
+  min-height: 140px; /* Uniform height */
+}
+
+/* Specific Style for Image Cards */
+.grid-item.image-card {
+  padding: 0; /* Remove padding to let image fill */
+  overflow: hidden; /* Clip image */
+  background: #f0f0f0; /* Loading placeholder */
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  height: 180px; /* Fixed height for gallery consistency */
+}
+
+.grid-item.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Crop to fit */
+  transition: transform 0.5s ease;
+}
+
+/* Hover Effect: Zoom Image */
+.grid-item.image-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Caption Overlay (Normally hidden or subtle) */
+.grid-item.image-card .card-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: #fff;
+  padding: 20px 10px 10px 10px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  pointer-events: none;
+}
+
+/* Show Caption on Hover */
+.grid-item.image-card:hover .card-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Existing folder/file styles override for cleaner look */
+.grid-item:not(.image-card):hover {
+  background: rgba(0, 86, 179, 0.05);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* --- LIGHTBOX STYLES --- */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 10001; /* Above modal */
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 1000px;
+  max-height: 85vh;
+  object-fit: contain;
+  animation: zoomIn 0.3s;
+  border-radius: 4px;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+#lightbox-caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.close-lightbox {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.close-lightbox:hover,
+.close-lightbox:focus {
+  color: var(--primary-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    width: 95%;
+    margin: 10% auto;
+    height: 70vh;
+  }
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); /* Adjusted */
+  }
+  .lightbox-content {
+    width: 95%;
+  }
+}
+
+/* Specific Style for PDF Cards */
+.grid-item.pdf-card {
+  padding: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  height: 180px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pdf-icon-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #f9f9f9;
+}
+
+.pdf-icon-box i {
+  font-size: 60px;
+  color: #e74c3c; /* PDF Red */
+  transition: transform 0.3s ease;
+}
+
+.grid-item.pdf-card .card-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff; /* White background for text part */
+  color: var(--navy-dark);
+  padding: 10px;
+  border-top: 1px solid #eee;
+  font-size: 13px;
+  font-weight: 600;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect for PDF */
+.grid-item.pdf-card:hover .pdf-icon-box i {
+  transform: scale(1.2);
+}
+
+.grid-item.pdf-card:hover {
+  box-shadow: 0 10px 20px rgba(231, 76, 60, 0.2);
+  border-color: #e74c3c;
+}
+
+[data-theme="dark"] .grid-item.pdf-card {
+  background: var(--card-bg);
+  border-color: rgba(255,255,255,0.1);
+}
+[data-theme="dark"] .pdf-icon-box {
+  background: rgba(255,255,255,0.02);
+}
+[data-theme="dark"] .grid-item.pdf-card .card-caption {
+  background: var(--card-bg);
+  color: #e6f1ff;
+  border-top-color: rgba(255,255,255,0.1);
+}
+
+/* Interactivity Hint on Skills Card */
+.skills .card {
+  cursor: pointer; /* Hand cursor */
+  position: relative;
+  overflow: hidden; /* Ensure consistent shape */
+}
+
+/* Premium Badge styling */
+.skills .card::after {
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 13px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-cyan));
+  padding: 8px 15px;
+  border-radius: 30px; /* Pill shape */
+  box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
+  opacity: 0;
+  transform: translateY(20px); /* Slide up effect */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy spring */
+  letter-spacing: 0.5px;
+  pointer-events: none;
+}
+
+/* Localized Content using html[lang] attribute set by JS */
+html[lang="vi"] .skills .card::after {
+  content: "Xem dự án \f06e";
+}
+
+html[lang="en"] .skills .card::after {
+  content: "View Project \f06e";
+}
+
+.skills .card:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add a subtle highlight border on hover */
+.skills .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  border: 2px solid var(--primary-color);
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.skills .card:hover::before {
+  opacity: 1;
+}
+
+/* Custom Folder Icons Colors */
+.grid-item.folder-card i {
+  color: var(--primary-color); 
+}
+/* Specific tweaks if needed */ 
+.grid-item.folder-card:hover i {
+  color: #f7b926; /* Gold on hover just for fun */
 }
