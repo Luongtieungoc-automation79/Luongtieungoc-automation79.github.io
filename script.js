@@ -22,8 +22,8 @@ $(document).ready(function () {
         "Hiện là sinh viên năm 4 tại Đại học Nông Lâm TPHCM. Tôi có kinh nghiệm thực chiến trong việc đấu nối tủ điện, thiết kế trên phần mềm Autocad, thiết kế mạch PCB và làm việc với các hệ thống điều khiển tự động. <br /><br /> Tôi luôn khao khát cơ hội vận dụng kiến thức chuyên môn vào các dự án thực tiễn, đặc biệt là trong lĩnh vực Tự động hóa và IoT. Tôi mong muốn làm việc tại khu vực Thành Phố Hồ Chí Minh, các vùng phụ cận hoặc tại Khánh Hòa.",
       about_school_label: "Trường:",
       about_school_name: "Đại học Nông Lâm TP.HCM",
-      about_location_label: "Nơi ở:",
-      about_location_val: "Khánh Hòa, Việt Nam",
+      about_location_label: "Nơi ở hiện tại:",
+      about_location_val: "KTX KHU B, Đ. Mạc Đĩnh Chi, Khu phố Tân Hòa, Dĩ An, Bình Dương, Việt Nam",
 
       skills_title: "Kỹ năng chuyên môn",
       skill_1_title: "Lập trình Điều khiển",
@@ -83,7 +83,7 @@ $(document).ready(function () {
       about_school_label: "University:",
       about_school_name: "Nong Lam University HCMC",
       about_location_label: "Location:",
-      about_location_val: "Khanh Hoa, Vietnam",
+      about_location_val: "Dormitory Area B, Mac Dinh Chi Street, Tan Hoa Ward, Di An City, Binh Duong Province, Vietnam",
 
       skills_title: "Professional Skills",
       skill_1_title: "Control Programming",
@@ -687,3 +687,4 @@ $(document).ready(function () {
     document.getElementById("lightbox-modal").style.display = "none";
   }
 });
+
