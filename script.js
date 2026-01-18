@@ -23,7 +23,7 @@ $(document).ready(function () {
       about_school_label: "Trường:",
       about_school_name: "Đại học Nông Lâm TP.HCM",
       about_location_label: "Nơi ở hiện tại:",
-      about_location_val: "KTX KHU B, Đ. Mạc Đĩnh Chi, Khu phố Tân Hòa, Dĩ An, Bình Dương, Việt Nam",
+      about_location_val: "KTX KHU B, Đường Mạc Đĩnh Chi, Khu đô thị ĐHQG-HCM, Khu phố Tân Hòa, Phường Đông Hòa, TP.HCM, Việt Nam",
 
       skills_title: "Kỹ năng chuyên môn",
       skill_1_title: "Lập trình Điều khiển",
@@ -83,7 +83,7 @@ $(document).ready(function () {
       about_school_label: "University:",
       about_school_name: "Nong Lam University HCMC",
       about_location_label: "Location:",
-      about_location_val: "Dormitory Area B, Mac Dinh Chi Street, Tan Hoa Ward, Di An City, Binh Duong Province, Vietnam",
+      about_location_val: "Dormitory Area B, Mac Dinh Chi Street, Vietnam National University–Ho Chi Minh City Urban Area, Tan Hoa Quarter, Dong Hoa Ward, Ho Chi Minh City, Vietnam",
 
       skills_title: "Professional Skills",
       skill_1_title: "Control Programming",
@@ -687,4 +687,5 @@ $(document).ready(function () {
     document.getElementById("lightbox-modal").style.display = "none";
   }
 });
+
 
